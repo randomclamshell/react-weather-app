@@ -2,7 +2,7 @@ import React from 'react';
 import Titles from './components/titles';
 import Form from './components/form';
 import Weather from './components/weather';
-
+import './App.css';
 const apiKey = `${process.env.REACT_APP_apiKey}`;
 
 
@@ -27,8 +27,6 @@ class App extends React.Component {
     //set up api 
     const apiCall = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=imperial`);
     const data = await apiCall.json();
-
-    console.log(data);
 
     if (city && country) {
       this.setState({
